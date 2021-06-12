@@ -271,6 +271,7 @@
     <Content Include="Assets\images\service\10.jpg" />
     <Content Include="Assets\images\service\11.png" />
     <Content Include="Assets\images\service\12.jpg" />
+    <Content Include="Assets\images\service\dot-ksm.png" />
     <Content Include="Assets\images\service\K.png" />
     <Content Include="Assets\images\service\P.png" />
     <Content Include="Assets\images\team\01.jpg" />

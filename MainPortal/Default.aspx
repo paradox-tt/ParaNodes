@@ -69,7 +69,7 @@
                 <div class="col-md-10 height-600 bg-overlay-dark-2" style="background: url(Assets/images/bg/12.jpg) no-repeat center center; background-size: cover;">
                     <div class="row h-100 m-0 justify-content-center align-items-center">
                         <div class="col-8 offset-md-1 mr-auto all-text-white">
-                            <h1 class="display-4 display-md-2 font-weight-700 font-weight-700 alt-font font-italic">Para Nodes</h1>
+                            <h1 class="display-4 display-md-2 font-weight-700 font-weight-700 alt-font font-italic">ParaNodes</h1>
                             <h4 class="display-6 display-md-5 font-weight-700 text-white">Secure and Reliable Validators Nodes</h4>
                             <a href="#" class="btn btn-outline-white btn-lg mt-3">Who are we?</a>
                         </div>
@@ -94,11 +94,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3">
-                    <div class="h-auto w-auto p-5" style="background: url(Assets/images/service/p.png) center center; background-size: cover;"><span class="p-5"></span></div>
-                </div>
-                <div class="col-md-3">
-                    <div class="h-auto w-auto p-5" style="background: url(Assets/images/service/k.png) center center; background-size: cover;"><span class="p-5"></span></div>
+                <div class="col-md-6">
+                    <div class="h-100 w-100 p-5" style="background: url(Assets/images/service/dot-ksm.png) center center; background-size: cover;"><span class="p-5"></span></div>
                 </div>
                 <div class="col-md-6">
                     <div class="bg-grad h-100 w-100 d-table p-5 all-text-white">
