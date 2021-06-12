@@ -181,37 +181,114 @@
                 </div>
                 <div class="col-md-6 p-md-5 p-4 bg-dark all-text-white border-radius-3 border-radius-left-0">
                     <h4 class="mb-4">Want to nominate us?</h4>
-                    <h6>Polkadot validators @ 3% Fixed Commission</h6>
-                    <ol>
-                        <li>ParaNodes.io/01 | 5,000 DOT Self Stake 
-                            <br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;ADDRESS:14hM4oLJCK6wtS7gNfwTDhthRjy5QJ1t3NAcoPjEepo9AH67
-                        </li>
-                        <li>ParaNodes.io/02 | 1 DOT Self Stake 
-                            <br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;ADDRESS:13wroNHV6aJEkUFJEx4NYv7kv5vgq4HypLAPSz347VVQbYj3
-                            <br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;<i>Self Stake to be increased.</i>
-                        </li>
-                    </ol>
-                    <br /><br />
-                    <h6>Kusama validators @ 10% Commission trending to 5%</h6>
-                    <ol>
-                        <li>ParaNodes.io/01 | 50 KSM Self Stake 
-                            <br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;ADDRESS:H3DL157HL7DkvV2kXocanmKaGXNyQphUDVW33Fnfk8KNhsv
-                        </li>
-   
-                        <li>ParaNodes.io/02 | 50 KSM Self Stake 
-                            <br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;ADDRESS:HtYny8Eker9VBEKQrtBd6Y5PTkaHQFSvyMFy2bkd66wGBan
-                        </li>
-                    </ol>
+                    <div class="container">
+                        <div class="row">
+                            <h6>Polkadot validators at <span class="text-primary">3.00%</span> fixed commission.</h6>
+                        </div>
+                        <div class="row">
+                            <div class="mr-1">
+                                Name:
+                            </div>
+                            <div class="mr-2 text-primary">
+                                ParaNodes.io/01 
+                            </div>
+                            <div class="mr-1">
+                                Self Stake:
+                            </div>
+                            <div class="md-1 text-primary">
+                                5,000 DOT
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="mr-1">Address:</div>
+                            <div class="text-primary">
+                                14hM4oLJCK6wtS7gNfwTDhthRjy5QJ1t3NAcoPjEepo9AH67
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="mr-1">
+                                Name:
+                            </div>
+                            <div class="mr-2 text-primary">
+                                ParaNodes.io/02 
+                            </div>
+                            <div class="mr-1">
+                                Self Stake:
+                            </div>
+                            <div class="md-1 text-primary">
+                                1 DOT
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="mr-1">Address:</div>
+                            <div class="text-primary">
+                                13wroNHV6aJEkUFJEx4NYv7kv5vgq4HypLAPSz347VVQbYj3
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="mr-1">Notes:</div>
+                            <div>
+                                This server is still waiting nominations before it can enter the active set.
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+                    <br />
+                    <div class="container">
+                        <div class="row">
+                            <h6>Kusama validators at <span class="text-primary">10.00%</span> commission trending to <span class="text-primary">5.00%</span>.</h6>
+                        </div>
+                        <div class="row">
+                            <div class="mr-1">
+                                Name:
+                            </div>
+                            <div class="mr-2 text-primary">
+                                ParaNodes.io/01 
+                            </div>
+                            <div class="mr-1">
+                                Self Stake:
+                            </div>
+                            <div class="md-1 text-primary">
+                                50 KSM
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="mr-1">Address:</div>
+                            <div class="text-primary">
+                                H3DL157HL7DkvV2kXocanmKaGXNyQphUDVW33Fnfk8KNhsv
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="mr-1">
+                                Name:
+                            </div>
+                            <div class="mr-2 text-primary">
+                                ParaNodes.io/02 
+                            </div>
+                            <div class="mr-1">
+                                Self Stake:
+                            </div>
+                            <div class="md-1 text-primary">
+                                50 KSM
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="mr-1">Address:</div>
+                            <div class="text-primary">
+                                HtYny8Eker9VBEKQrtBd6Y5PTkaHQFSvyMFy2bkd66wGBan
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
     </section>
- <br /><br /><br /><br /><br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
     <!-- =======================
 	footer  -->
     <uc1:Footer runat="server" ID="Footer" />
