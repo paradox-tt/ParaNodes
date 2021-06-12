@@ -185,11 +185,11 @@
                     <ol>
                         <li>ParaNodes.io/01 | 5,000 DOT Self Stake 
                             <br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;ADDRESS:xx
+                            &nbsp;&nbsp;&nbsp;&nbsp;ADDRESS:14hM4oLJCK6wtS7gNfwTDhthRjy5QJ1t3NAcoPjEepo9AH67
                         </li>
                         <li>ParaNodes.io/02 | 1 DOT Self Stake 
                             <br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;ADDRESS:xx
+                            &nbsp;&nbsp;&nbsp;&nbsp;ADDRESS:13wroNHV6aJEkUFJEx4NYv7kv5vgq4HypLAPSz347VVQbYj3
                             <br />
                             &nbsp;&nbsp;&nbsp;&nbsp;<i>Self Stake to be increased.</i>
                         </li>
@@ -199,12 +199,12 @@
                     <ol>
                         <li>ParaNodes.io/01 | 50 KSM Self Stake 
                             <br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;ADDRESS:xx
+                            &nbsp;&nbsp;&nbsp;&nbsp;ADDRESS:H3DL157HL7DkvV2kXocanmKaGXNyQphUDVW33Fnfk8KNhsv
                         </li>
    
                         <li>ParaNodes.io/02 | 50 KSM Self Stake 
                             <br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;ADDRESS:xx
+                            &nbsp;&nbsp;&nbsp;&nbsp;ADDRESS:HtYny8Eker9VBEKQrtBd6Y5PTkaHQFSvyMFy2bkd66wGBan
                         </li>
                     </ol>
                 </div>
