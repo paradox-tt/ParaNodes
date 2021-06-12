@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AboutUs.aspx" />
     <Content Include="Assets\css\color.css" />
     <Content Include="Assets\css\style.css" />
     <Content Include="Assets\images\banner\01.jpg" />
@@ -425,11 +426,17 @@
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <Content Include="Default.aspx" />
     <Content Include="PageParts\Footer.ascx" />
-    <Content Include="PageParts\Head.ascx" />
     <Content Include="PageParts\Menu.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -437,19 +444,19 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MainLayout.Master.cs">
+      <DependentUpon>MainLayout.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MainLayout.Master.designer.cs">
+      <DependentUpon>MainLayout.Master</DependentUpon>
+    </Compile>
     <Compile Include="PageParts\Footer.ascx.cs">
       <DependentUpon>Footer.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PageParts\Footer.ascx.designer.cs">
       <DependentUpon>Footer.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="PageParts\Head.ascx.cs">
-      <DependentUpon>Head.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PageParts\Head.ascx.designer.cs">
-      <DependentUpon>Head.ascx</DependentUpon>
     </Compile>
     <Compile Include="PageParts\Menu.ascx.cs">
       <DependentUpon>Menu.ascx</DependentUpon>
@@ -640,6 +647,7 @@
     <Content Include="Assets\vendor\themify-icons\fonts\themify.eot" />
     <Content Include="Assets\vendor\themify-icons\fonts\themify.ttf" />
     <Content Include="Assets\vendor\themify-icons\fonts\themify.woff" />
+    <Content Include="MainLayout.Master" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

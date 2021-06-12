@@ -11,26 +11,8 @@ namespace MainPortal
 {
 
 
-    public partial class _default
+    public partial class Default2
     {
-
-        /// <summary>
-        /// Head control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::MainPortal.PageParts.Head Head;
-
-        /// <summary>
-        /// Menu control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::MainPortal.PageParts.Menu Menu;
 
         /// <summary>
         /// WhoWeAre control.
@@ -49,14 +31,5 @@ namespace MainPortal
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal Literal1;
-
-        /// <summary>
-        /// Footer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::MainPortal.PageParts.Footer Footer;
     }
 }
