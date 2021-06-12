@@ -370,6 +370,7 @@
     <Content Include="Assets\vendor\wow\wow.js" />
     <Content Include="Assets\vendor\wow\wow.min.js" />
     <Content Include="Default.aspx" />
+    <Content Include="PageParts\Footer.ascx" />
     <Content Include="PageParts\Head.ascx" />
     <Content Include="PageParts\Menu.ascx" />
     <Content Include="Web.config" />
@@ -381,6 +382,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageParts\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageParts\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
     </Compile>
     <Compile Include="PageParts\Head.ascx.cs">
       <DependentUpon>Head.ascx</DependentUpon>

@@ -25,7 +25,9 @@ namespace MainPortal.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(@"ParaNodes is lead by a popular Polkadot Ambassador and Polkadot Community Moderator Paradox.  His area of speciality being validator node setup and operation as well staking.  He has published content on this topic and has received treasury tips for his hardwork and role in aiding the polkadot community.  Notwithstanding this, he also has professional and academic background in the field.")]
+        [global::System.Configuration.DefaultSettingValueAttribute(@"
+			ParaNodes is a team of validator operators who are solely focused on hosting and operating validators within the Polkadot ecosystem.  The servers are generously resourced and frequently monitored to ensure optimal operations.  In the event of failure backup nodes are available in two remote locations.  
+		")]
         public string WhoWeAre {
             get {
                 return ((string)(this["WhoWeAre"]));
