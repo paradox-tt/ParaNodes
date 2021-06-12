@@ -126,42 +126,42 @@
             <div class="row mt-3">
                 <div class="col-sm-6 col-md-4">
                     <div class="feature-box h-100 icon-grad">
-                        <div class="feature-box-icon"><i class="ti-brush-alt"></i></div>
+                        <div class="feature-box-icon"><i class="ti-eye"></i></div>
                         <h3 class="feature-box-title">Focus</h3>
                         <p class="feature-box-desc">We operate within the Polkadot ecosystem exclusively and dedicate our time to learning how to best operate their nodes.  We keep abreast on all major events within the ecosystem and respond quickly when called upon. </p>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4">
                     <div class="feature-box h-100 icon-grad">
-                        <div class="feature-box-icon"><i class="ti-announcement"></i></div>
+                        <div class="feature-box-icon"><i class="ti-bolt"></i></div>
                         <h3 class="feature-box-title">Dedicated Servers</h3>
                         <p class="feature-box-desc">Our servers are Dedicated (not virtual) and are configured well above Polkadot's reference system.  We do not compromise on performance.</p>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4">
                     <div class="feature-box h-100 icon-grad">
-                        <div class="feature-box-icon"><i class="ti-bolt"></i></div>
+                        <div class="feature-box-icon"><i class="ti-settings"></i></div>
                         <h3 class="feature-box-title">Rendundancy</h3>
                         <p class="feature-box-desc">Secondary and Tertiary nodes are available in the United States and Caribbean.  Decentralization as it was meant to be!</p>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4">
                     <div class="feature-box h-100 icon-grad">
-                        <div class="feature-box-icon"><i class="ti-settings"></i></div>
+                        <div class="feature-box-icon"><i class="ti-check-box"></i></div>
                         <h3 class="feature-box-title">Identity checked!</h3>
                         <p class="feature-box-desc">ParaNodes was founded by one of the few W3F verified known-good identity holders, Paradox.  He is a Polakdot Ambassador and Community Moderator on Polkadot's offical discord.</p>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4">
                     <div class="feature-box h-100 icon-grad">
-                        <div class="feature-box-icon"><i class="ti-gallery"></i></div>
+                        <div class="feature-box-icon"><i class="ti-thumb-up"></i></div>
                         <h3 class="feature-box-title">Recognized Excellence</h3>
                         <p class="feature-box-desc">ParaNode's founder avidly assists other validators to ensure optimal operations of their servers.  This effort is recognized by the Council by way of several Treasury Tips.</p>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4">
                     <div class="feature-box h-100 icon-grad">
-                        <div class="feature-box-icon"><i class="ti-gallery"></i></div>
+                        <div class="feature-box-icon"><i class="ti-money"></i><i class="ti-money"></i><i class="ti-money"></i></div>
                         <h3 class="feature-box-title">Bonus Payouts</h3>
                         <p class="feature-box-desc">We have committed to return 5% of our validator earnings to loyal nominators based on a fair earning leaderboard approach.</p>
                     </div>
