@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainPortal", "MainPortal\MainPortal.csproj", "{AA607FDC-BDCC-457B-8FB9-AB6ACF252C18}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PN_Backend", "PN_Backend\PN_Backend.csproj", "{2C34794C-20C3-4888-BBA0-1E1687035BFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolkadotCSharp", "PolkadotCSharp\PolkadotCSharp.csproj", "{7EC3C754-7923-46AE-932E-2FB34C402A99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{AA607FDC-BDCC-457B-8FB9-AB6ACF252C18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA607FDC-BDCC-457B-8FB9-AB6ACF252C18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA607FDC-BDCC-457B-8FB9-AB6ACF252C18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C34794C-20C3-4888-BBA0-1E1687035BFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C34794C-20C3-4888-BBA0-1E1687035BFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C34794C-20C3-4888-BBA0-1E1687035BFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C34794C-20C3-4888-BBA0-1E1687035BFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EC3C754-7923-46AE-932E-2FB34C402A99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EC3C754-7923-46AE-932E-2FB34C402A99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EC3C754-7923-46AE-932E-2FB34C402A99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EC3C754-7923-46AE-932E-2FB34C402A99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

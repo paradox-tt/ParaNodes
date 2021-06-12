@@ -11,7 +11,7 @@
                     <div class="row h-100">
                         <div class="col-10 pb-5 mx-auto d-flex">
                             <div class="align-self-end all-text-white rotate-270 pb-5 mb-5">
-                                <a class="btn btn-white btn-round zoom-on-hover mx-2 align-middle d-inline-block" data-fancybox="" href="https://youtu.be/n_Cn8eFo7u8"><i class="fa fa-play"></i></a>
+                                <a class="btn btn-white btn-round zoom-on-hover mx-2 align-middle d-inline-block" data-fancybox="" href=""><i class="fa fa-play"></i></a>
                                 <div class="align-middle d-inline-block">
                                     <h4 class="mb-0">Who we are..</h4>
                                     <p class="mb-0">In 02:11 min</p>
