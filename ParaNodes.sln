@@ -3,13 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainPortal", "MainPortal\MainPortal.csproj", "{AA607FDC-BDCC-457B-8FB9-AB6ACF252C18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortalCore", "PortalCore\PortalCore.csproj", "{9D94268C-CA3A-4FCD-9444-D4A2E4DA7C34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PN_Backend", "PN_Backend\PN_Backend.csproj", "{2C34794C-20C3-4888-BBA0-1E1687035BFF}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PolkadotCSharp", "PolkadotCSharp\PolkadotCSharp.csproj", "{7EC3C754-7923-46AE-932E-2FB34C402A99}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortalCore", "PortalCore\PortalCore.csproj", "{9D94268C-CA3A-4FCD-9444-D4A2E4DA7C34}"
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "ChainScraper", "ChainScraper\ChainScraper.njsproj", "{CA008837-B9B1-4611-B4A3-725219759857}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,22 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AA607FDC-BDCC-457B-8FB9-AB6ACF252C18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA607FDC-BDCC-457B-8FB9-AB6ACF252C18}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA607FDC-BDCC-457B-8FB9-AB6ACF252C18}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA607FDC-BDCC-457B-8FB9-AB6ACF252C18}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2C34794C-20C3-4888-BBA0-1E1687035BFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C34794C-20C3-4888-BBA0-1E1687035BFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C34794C-20C3-4888-BBA0-1E1687035BFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C34794C-20C3-4888-BBA0-1E1687035BFF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7EC3C754-7923-46AE-932E-2FB34C402A99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7EC3C754-7923-46AE-932E-2FB34C402A99}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7EC3C754-7923-46AE-932E-2FB34C402A99}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7EC3C754-7923-46AE-932E-2FB34C402A99}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9D94268C-CA3A-4FCD-9444-D4A2E4DA7C34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9D94268C-CA3A-4FCD-9444-D4A2E4DA7C34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D94268C-CA3A-4FCD-9444-D4A2E4DA7C34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D94268C-CA3A-4FCD-9444-D4A2E4DA7C34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA008837-B9B1-4611-B4A3-725219759857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA008837-B9B1-4611-B4A3-725219759857}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA008837-B9B1-4611-B4A3-725219759857}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA008837-B9B1-4611-B4A3-725219759857}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

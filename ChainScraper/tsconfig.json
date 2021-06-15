@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es2015", 
+    "module": "commonjs", 
+    "lib": [ "ES2015" ],
+    "esModuleInterop": true,
+    "strict": false,
+    "moduleResolution": "node",
+    "resolveJsonModule": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
