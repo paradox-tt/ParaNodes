@@ -23,7 +23,7 @@
                 <div class="col-md-10 height-600 bg-overlay-dark-2" style="background: url(Assets/images/bg/12.jpg) no-repeat center center; background-size: cover;">
                     <div class="row h-100 m-0 justify-content-center align-items-center">
                         <div class="col-8 offset-md-1 mr-auto all-text-white">
-                            <h1 class="display-4 display-md-2 font-weight-700 font-weight-700 alt-font font-italic">ParaNodes</h1>
+                            <h1 class="display-4 display-md-2 font-weight-700 font-weight-700 alt-font font-italic">Paranodes</h1>
                             <h4 class="display-6 display-md-5 font-weight-700 text-white">Secure and Reliable Validators Nodes</h4>
                             <a href="#" class="btn btn-outline-white btn-lg mt-3">Who are we?</a>
                         </div>
