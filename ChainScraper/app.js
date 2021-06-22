@@ -26,9 +26,11 @@ app.all('/', (req, res) => {
     var era = req.query.era;
     if (address.charAt(0) == '1') {
         wsProvider = new api_1.WsProvider('ws://104.238.205.8:9301');
+        console.log("Using Polkadot port:");
     }
     else {
         wsProvider = new api_1.WsProvider('ws://104.238.205.8:9302');
+        console.log("Using Kusama port:");
     }
     console.log("Request received for address:" + address + " era:" + era);
     getBlockForEra(era).then(block_hash => {
@@ -36,7 +38,11 @@ app.all('/', (req, res) => {
             Results = x;
             const names = getNames();
             const balances = getBalances();
-            const era = getEra(block_hash);
+            const era = getEra(block_hash).then(era => {
+                getValidatorCommission(era, address).then(com => {
+                    Results.commission = JSON.parse(com).commission;
+                });
+            });
             Promise.all([names, balances, era]).then(values => {
                 Results.active_era = values[2];
                 res.status(200).json(Results);
@@ -45,6 +51,23 @@ app.all('/', (req, res) => {
         }).catch(e => {
             console.log(e);
         });
+    });
+});
+app.all('/payouts', (req, res) => {
+    var address = req.query.address;
+    var era = req.query.era;
+    if (address.charAt(0) == '1') {
+        wsProvider = new api_1.WsProvider('ws://104.238.205.8:9301');
+        console.log("Using Polkadot port:");
+    }
+    else {
+        wsProvider = new api_1.WsProvider('ws://104.238.205.8:9302');
+        console.log("Using Kusama port:");
+    }
+    const payout = getValidatorPayout(1, '2');
+    Promise.all([payout]).then(values => {
+        res.status(200).send(values[0].block.extrinsics.toHuman());
+        console.log("Results posted");
     });
 });
 //Listen for the connection on the specified port
@@ -84,6 +107,25 @@ async function getEra(block_hash) {
     var output;
     await api.query.staking.activeEra.at(block_hash).then(x => {
         output = x.unwrapOrDefault().index.toNumber();
+    });
+    return output;
+}
+async function getValidatorCommission(era, val_address) {
+    const api = await api_1.ApiPromise.create({ provider: wsProvider });
+    var output;
+    await api.query.staking.erasValidatorPrefs(era, val_address).then(x => {
+        output = x.toString();
+    });
+    return output;
+}
+async function getValidatorPayout(era, val_address) {
+    const api = await api_1.ApiPromise.create({ provider: wsProvider });
+    var output;
+    const blockHash = await api.rpc.chain.getBlockHash(8000438).then(bh => {
+        return bh;
+    });
+    await api.rpc.chain.getBlock(blockHash).then(x => {
+        output = x;
     });
     return output;
 }
