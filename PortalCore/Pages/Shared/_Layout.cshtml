@@ -1,31 +1,81 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - PortalCore</title>
-    
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <meta name="description" content="">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paranodes</title>
+    <link rel="shortcut icon" href="/favicon.png" />
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sticky-footer-navbar/">
+
+    <meta name="description" content="Paranodes provides reliable validator nodes and educational consultancy within the Polkadot eco-system." />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://www.paranodes.io/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+    <meta property="og:site_name" content="Paranodes" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Paranodes" />
+    <meta property="og:description" content="Paranodes provides reliable validator nodes and educational consultancy within the Polkadot eco-system." />
+    <meta property="og:url" content="https://www.paranodes.io/" />
+    <meta property="og:image" content="https://www.paranodes.io/img/logotrans_l_up.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Paranodes" />
+    <meta name="twitter:description" content="Paranodes provides reliable validator nodes and educational consultancy within the Polkadot eco-system" />
+    <meta name="twitter:url" content="https://www.paranodes.io/" />
+    <meta name="twitter:image" content="https://www.paranodes.io/img/logotrans_l_up.png" />
+    <meta name="twitter:site" content="%40paranodes" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="628" />
+
+
+    <!-- Generic bootstrap styles -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles -->
+    <link href="~/css/sticky-footer-navbar.css" rel="stylesheet">
+    <link href="~/css/override.css" rel="stylesheet">
+
 </head>
-<body>
+<body class="d-flex flex-column h-100">
+
+
+
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">PortalCore</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+        <!-- Navigation menu and logo -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white pndot">
+            <div class="container-fluid">
+
+                <a class="navbar-brand" asp-area="" asp-page="/Index">
+                    <img class="logo header-logo-light" alt="Polkadot" src="~/img/logotrans_l_up.png" height="120">
+                </a>
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+
+                <div class="navbar-collapse collapse" id="collapseNavbar">
+
+                    <ul class="navbar-nav ms-auto align-text-bottom" style="height: 70px;">
+                        <li class="nav-item d-flex align-items-end bd-highlight mb-3" style="height: 100%">
+
+
+                            <a class="nav-link"  asp-area="" asp-page="/LeaderBoard">Leaderboard</a>
+                           
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                        <li class="nav-item d-flex align-items-end bd-highlight mb-3" style="height: 100%">
+
+
+                            <a class="nav-link" asp-area="" asp-page="/NodeStatus">Node Status</a>
+
                         </li>
+                        <li class="nav-item d-flex align-items-end bd-highlight mb-3" style="height: 100%">
+
+
+                            <a class="nav-link" asp-area="" asp-page="/Learning">Learning</a>
+
+                        </li>
+
                     </ul>
+
                 </div>
             </div>
         </nav>
@@ -36,9 +86,13 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <!-- Footer: slogan & socials -->
+    <footer class="footer mt-auto py-3 bg-light">
         <div class="container">
-            &copy; 2021 - PortalCore - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            <div class="d-flex justify-content-between bd-highlight mb-3">
+                <div class="p-2 bd-highlight"><span class="text-muted">Paranodes: Quality and reliability before profit. </span></div>
+                <div class="p-2 bd-highlight"><a href="https://twitter.com/Paranodes" target="_blank" class="text-dark"><img src="~/img/twitter.svg" width="20px"></a></div>
+            </div>
         </div>
     </footer>
 

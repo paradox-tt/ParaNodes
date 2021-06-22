@@ -1,0 +1,33 @@
+.pndot {
+	background-image: url("../img/dots.png");
+	background-repeat: repeat-x;
+}
+.ms-space {
+	height: 8rem;
+}
+.highli {
+	height: 5rem;
+	background-image: url("../img/underline.png");
+	background-repeat: no-repeat;
+	position: relative;
+	display: inline-block;
+	margin: 0 0px;
+	padding: 0 0px;
+	background-position: center top;
+}
+.highli_sml {
+	height: 5rem;
+	background-image: url("../img/underline_sml.png");
+	background-repeat: no-repeat;
+	position: relative;
+	display: inline-block;
+	margin: 0 0px;
+	padding: 0 0px;
+	background-position: center top;
+}
+.blockpad{
+  margin: 1px 5px 1px 5px;
+}
+.ceilingsp{
+	height: 10rem;
+}
