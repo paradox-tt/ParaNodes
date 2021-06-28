@@ -3,6 +3,7 @@ import { Nominator } from './Nominator';
 export class ResultSet {
     Nominators: Array<Nominator>;
     active_era;
+    commission;
 
     AddNominator(n: Nominator) {
         if (this.Nominators == undefined) {

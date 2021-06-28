@@ -3,7 +3,7 @@ import bodyparser from 'body-parser';
 import { ApiPromise, WsProvider } from '@polkadot/api';//Required for chain interaction
 import { ResultSet } from './ResultSet';
 import { Nominator } from './Nominator';
-import { StakingLedger, BlockHash } from '@polkadot/types/interfaces';
+import { EraIndex, BlockHash, SignedBlock } from '@polkadot/types/interfaces';
 
 var wsProvider;
 var Results: ResultSet;
@@ -43,8 +43,11 @@ app.all('/',  (req, res) => {
 
             const names = getNames();
             const balances = getBalances();
-
-            const era = getEra(block_hash);
+            const era = getEra(block_hash).then(era => {
+                getValidatorCommission(era, address).then(com => {
+                    Results.commission = JSON.parse(com).commission;
+                });
+            });
 
             Promise.all([names,balances,era]).then(values => {
                 Results.active_era = values[2];
@@ -65,6 +68,32 @@ app.all('/',  (req, res) => {
 
 
 });
+
+app.all('/payouts', (req, res) => {
+
+    var address: string = req.query.address;
+    var era: number = req.query.era;
+
+    if (address.charAt(0) == '1') {
+        wsProvider = new WsProvider('ws://104.238.205.8:9301');
+        console.log("Using Polkadot port:");
+    } else {
+        wsProvider = new WsProvider('ws://104.238.205.8:9302');
+        console.log("Using Kusama port:");
+    }
+
+
+    const payout = getValidatorPayout(1, '2');
+
+    Promise.all([payout]).then(values => {
+        res.status(200).send(
+            values[0].block.extrinsics.toHuman()
+        );
+        console.log("Results posted");
+    });
+
+});
+
 
 //Listen for the connection on the specified port
 app.listen(listen_port, () => {
@@ -95,13 +124,14 @@ async function getBlockForEra(desired_era: number): Promise<BlockHash> {
 
     while (desired_era != active_era) {
         blockNumber -= 1000;
+
         blockHash = await api.rpc.chain.getBlockHash(blockNumber).then(bh => {
             return bh;
         });
         active_era = await api.query.staking.activeEra.at(blockHash).then(x => {
             return x.unwrapOrDefault().index.toNumber();
         });
-            
+        
         console.log("Found era:"+active_era);
     }
 
@@ -118,6 +148,33 @@ async function getEra(block_hash:BlockHash): Promise<number> {
         output = x.unwrapOrDefault().index.toNumber();
     });
 
+    return output;
+}
+
+async function getValidatorCommission(era:number,val_address:string):Promise<string> {
+    const api = await ApiPromise.create({ provider: wsProvider });
+    var output:string;
+
+    await api.query.staking.erasValidatorPrefs(era,val_address).then(x => {
+        output = x.toString();
+    });
+
+    return output;
+}
+
+async function getValidatorPayout(era: number, val_address: string):Promise<SignedBlock> {
+    const api = await ApiPromise.create({ provider: wsProvider });
+    var output:SignedBlock;
+
+    const blockHash = await api.rpc.chain.getBlockHash(8000438).then(bh => {
+        return bh;
+    });
+
+    await api.rpc.chain.getBlock(blockHash).then(x => {
+        output = x
+    });
+
+  
     return output;
 }
 
