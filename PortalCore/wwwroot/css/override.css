@@ -1,3 +1,4 @@
+@import url('file:///C:\Users\Pluto\source\repos\ParaNodes\PortalCore\wwwroot\css\override.css');
 .pndot {
 	background-image: url("../img/dots.png");
 	background-repeat: repeat-x;
@@ -30,4 +31,17 @@
 }
 .ceilingsp{
 	height: 10rem;
+}
+.pink {
+	background-image: url("../img/pink.png");
+	background-repeat: no-repeat;
+	background-position: center top;
+	margin: 0 0px;
+	padding-top: 10px;
+	padding-right: 0px;
+	padding-bottom: 15px;
+	padding-left: 0px;
+}
+.icon {
+	height: 7rem;
 }
