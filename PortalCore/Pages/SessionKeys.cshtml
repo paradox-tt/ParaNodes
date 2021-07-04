@@ -16,7 +16,7 @@
     <form method="post">
         <div class="container">
             <div class="row justify-content-md-center">
-                <div class="col-lg-4">
+                <div class="col-lg-5">
                     <input name="validator_id" type="text" class="form-control" placeholder="Validator Stash Address" />
                 </div>
                 <div class="col-lg-2">
@@ -29,7 +29,12 @@
             <div class="row justify-content-md-center">
                 <div class="col-10">
                     <b>Usage</b>: This tool can be used to retrieve the on-chain session key for a particular validator stash.  The accompanying RPC command can then be executed on the validator host to verify that the key is applicable.  This might be useful for validator operators who host mutliple instances and wish to verify stash/host associations.
+                    <br/><br />
+                    <sub>
+                        Note* The current session key is not yet accessible via the Polkadot.JS/API that this application uses.  If you have not changed your session keys recently it is fair to assume that the queued or next session keys are the current.  The next session key progresses to a queued session key and a queued session key progress to the current.  
+                    </sub>
                 </div>
+
             </div>
         </div>
 
@@ -80,7 +85,7 @@
                 <br /><br />
                 <code>/home/$USER/.local/share/$CHAINNAME/keystore</code>.
                 <br /><br />
-                <b>Retrival:</b>
+                <b>Generate:</b>
                 Session keys are generated from the validator host.  One method of creating a session key is by issuing an RPC command on the the host machine as follows:
                 <br /><br />
                 <code>curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:9933 </code>

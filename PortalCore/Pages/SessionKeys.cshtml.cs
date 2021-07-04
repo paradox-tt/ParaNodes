@@ -10,15 +10,16 @@ namespace PortalCore.Pages
 {
     public class SessionKeysModel : PageModel
     {
-
+        private string _qkey, _nkey, _rpc;
         public async Task OnPostAsync(string validator_id)
         {
             HttpClient Http = new HttpClient();
-            var qk = await Http.GetStringAsync("http://104.238.205.8:5000/QueuedKeys?address="+validator_id);
-            QueuedKeys = qk;
 
             var nk = await Http.GetStringAsync("http://104.238.205.8:5000/NextKeys?address=" + validator_id);
             NextKeys = nk;
+
+            var qk = await Http.GetStringAsync("http://104.238.205.8:5000/QueuedKeys?address="+validator_id);
+            QueuedKeys = qk;
 
             string rpc_command = "curl -H \"Content - Type: application / json\" -d '{\"id\":1, \"jsonrpc\":\"2.0\", \"method\": \"author_hasSessionKeys\", \"params\":[\""+nk+"\"]}' http://localhost:9933";
 
@@ -28,18 +29,73 @@ namespace PortalCore.Pages
 
         public string QueuedKeys
         {
-            get;set;
+            get {
+
+                if(_nkey == "0x")
+                {
+                    return NextKeys;
+                }else if (_qkey == "")
+                    {
+                    return "A queued key was not retrieived, it is possible that your validator is not in active set or it isn't elected for participation in the next era of validation";
+                    }
+                else
+                {
+                    return _qkey;
+                }
+            }
+            set
+            {
+                _qkey = value;
+            }
         }
 
         public string NextKeys
         {
-            get;set;
+            get
+            {
+                if (!string.IsNullOrEmpty(_nkey))
+                {
+                    if (_nkey == "0x")
+                    {
+                        return "A key wasn't retrieved, please ensure that the stash account is in validator mode and a key is applied.";
+                    }
+                    else
+                    {
+                        return _nkey;
+                    }
+                }
+                else
+                {
+                    return "";
+                }
+
+            }
+
+            set
+            {
+                _nkey = value;
+                
+            }
             
         }
 
         public string RPCCheck
         {
-            get; set;
+            get
+            {
+                if (_nkey == "0x")
+                {
+                    return "Sorry there isn't a key to generate the RPC command";
+                }
+                else
+                {
+                    return _rpc;
+                }
+            }
+            set
+            {
+                _rpc = value;
+            }
         }
     }
 }
