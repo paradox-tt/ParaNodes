@@ -15,10 +15,10 @@ namespace PortalCore.Pages
         {
             HttpClient Http = new HttpClient();
 
-            var nk = await Http.GetStringAsync("http://api.paranodes.io/NextKeys?address=" + validator_id);
+            var nk = await Http.GetStringAsync("http://api.paranodes.io:5000/NextKeys?address=" + validator_id);
             NextKeys = nk;
 
-            var qk = await Http.GetStringAsync("http://api.paranodes.io/QueuedKeys?address="+validator_id);
+            var qk = await Http.GetStringAsync("http://api.paranodes.io:5000/QueuedKeys?address="+validator_id);
             QueuedKeys = qk;
 
             string rpc_command = "curl -H \"Content - Type: application / json\" -d '{\"id\":1, \"jsonrpc\":\"2.0\", \"method\": \"author_hasSessionKeys\", \"params\":[\""+nk+"\"]}' http://localhost:9933";

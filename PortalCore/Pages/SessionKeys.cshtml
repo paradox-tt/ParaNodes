@@ -30,9 +30,13 @@
                 <div class="col-10">
                     <b>Usage</b>: This tool can be used to retrieve the on-chain session key for a particular validator stash.  The accompanying RPC command can then be executed on the validator host to verify that the key is applicable.  This might be useful for validator operators who host mutliple instances and wish to verify stash/host associations.
                     <br/><br />
-                    <sub>
-                        Note* The current session key is not yet accessible via the Polkadot.JS/API that this application uses.  If you have not changed your session keys recently it is fair to assume that the queued or next session keys are the current.  The next session key progresses to a queued session key and a queued session key progress to the current.  
-                    </sub>
+                         <sub>
+                             Note* The current session key is not yet accessible via Polkadot.JS/API that this application uses.  If you have not changed your session keys recently it is fair to assume that the queued or next session keys are the current.  The next session key progresses to a queued session key and a queued session key progress to the current.
+                         </sub>
+                        <br/><br/>
+                        <sub>
+                            <b>API endpoints:</b> Next Key   - http://api.paranodes.io:5000/NextKeys?address= | Queued Key - http://api.paranodes.io:5000/QueuedKeys?address=
+                        </sub>
                 </div>
 
             </div>
