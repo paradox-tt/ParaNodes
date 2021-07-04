@@ -1,0 +1,94 @@
+﻿@page
+@model PortalCore.Pages.SessionKeysModel
+@{
+    ViewData["Title"] = "Session Keys";
+}
+<!-- Start content -->
+<main class="flex-shrink-0">
+    <div class="container">
+
+        <div class="ceilingsp"><!-- space from menu --></div>
+        <div class="row">
+            <h1 class="text-center highli">Session Key Finder</h1>
+        </div>
+        <div class="rowspace"></div>
+    </div>
+    <form method="post">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-lg-4">
+                    <input name="validator_id" type="text" class="form-control" placeholder="Validator Stash Address" />
+                </div>
+                <div class="col-lg-2">
+                    <input type="submit" value="Find Session Key" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-10">
+                    <b>Usage</b>: This tool can be used to retrieve the on-chain session key for a particular validator stash.  The accompanying RPC command can then be executed on the validator host to verify that the key is applicable.  This might be useful for validator operators who host mutliple instances and wish to verify stash/host associations.
+                </div>
+            </div>
+        </div>
+
+                    <div class="rowspace"></div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-2 text-center">
+                                Next key
+                                <img src="~/img/question.svg" data-toggle="tooltip" title="Next Session Key - This represents the session key to be loaded AFTER the queued key. If you just rotated keys, the recently loaded key will be found here and will take two full sessions to be used." width="15" height="15" />
+                                <img src="~/img/copy.svg" onclick="copyText('nk')" width="15" height="15" />
+
+                            </div>
+                            <div class="col-10">
+                                <textarea class="form-control" rows="6" id="nk">@Model.NextKeys</textarea>
+                            </div>
+                        </div>
+                        <div class="rowspace"></div>
+                        <div class="row">
+                            <div class="col-lg-2 text-center">
+                                Queued key
+                                <img src="~/img/question.svg" data-toggle="tooltip" title="Queued Session Key - This key is only displayed when the validator is voted to be in the next era of validation.  It represents the key queued for next use." width="15" height="15" />
+                                <img src="~/img/copy.svg" onclick="copyText('qk')" width="15" height="15" />
+                                
+                            </div>
+                            <div class="col-lg-10">
+                                <textarea class="form-control" rows="6" id="qk">@Model.QueuedKeys</textarea>
+                            </div>
+                        </div>
+                        <div class="rowspace"></div>
+                        <div class="row">
+                            <div class="col-lg-2 text-center">
+                                RPC Check
+                                <img src="~/img/question.svg" data-toggle="tooltip" title="This RPC command when executed on a destination host machine returns true if the key exists in its keystore." width="15" height="15" />
+                                <img src="~/img/copy.svg" onclick="copyText('rpc')" width="15" height="15" />
+                            </div>
+                            <div class="col-lg-10">
+                                <textarea class="form-control" rows="6" id="rpc">@Model.RPCCheck</textarea>
+                            </div>
+                        </div>
+                    </div>
+    </form>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-10">
+                <b>Definition</b>:
+
+                A session key is single key that represents six (6) public keys associated with a validator instance.  These public keys and their accompanying private keys are found on the validator host in the path:
+                <br /><br />
+                <code>/home/$USER/.local/share/$CHAINNAME/keystore</code>.
+                <br /><br />
+                <b>Retrival:</b>
+                Session keys are generated from the validator host.  One method of creating a session key is by issuing an RPC command on the the host machine as follows:
+                <br /><br />
+                <code>curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:9933 </code>
+                <br /><br />
+                The author_rotateKeys RPC command does not erase any keys previously generated and can safely be executed multiple times.  In the event that previously generated session_keys for a particular validator instance are forgotten it is advised to regenerate the keys using this command.
+            </div>
+
+        </div>
+    </div>
+    <br /><br />
+</main>

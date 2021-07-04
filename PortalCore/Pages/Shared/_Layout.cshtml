@@ -35,6 +35,25 @@
     <link href="~/css/sticky-footer-navbar.css" rel="stylesheet">
     <link href="~/css/override.css" rel="stylesheet">
 
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+            $('.alert').alert();
+        });
+
+        function copyText(target_element) {
+            /* Get the text field */
+            var copyText = document.getElementById(target_element);
+
+            /* Select the text field */
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+            /* Copy the text inside the text field */
+            document.execCommand("copy");
+
+        }
+    </script>
 </head>
 <body class="d-flex flex-column h-100">
 
@@ -55,29 +74,40 @@
                 <div class="navbar-collapse collapse" id="collapseNavbar">
 
                     <ul class="navbar-nav ms-auto align-text-bottom" style="height: 70px;">
-                        @*<li class="nav-item d-flex align-items-end bd-highlight mb-3" style="height: 100%">
-
-
-                                <a class="nav-link"  asp-area="" asp-page="/LeaderBoard">Leaderboard</a>
-
-                            </li>
-                            <li class="nav-item d-flex align-items-end bd-highlight mb-3" style="height: 100%">
-
-
-                                <a class="nav-link" asp-area="" asp-page="/NodeStatus">Node Status</a>
-
-                            </li>
-                            <li class="nav-item d-flex align-items-end bd-highlight mb-3" style="height: 100%">
-
-
-                                <a class="nav-link" asp-area="" asp-page="/Learning">Learning</a>
-
-                            </li>*@
-
+                        <li class="nav-item d-flex align-items-end bd-highlight mb-3" style="height: 100%">
+                            <a class="nav-link" asp-page="/Index">Home</a>
+                        </li>
+                        <li class="nav-item d-flex align-items-end bd-highlight mb-3" style="height: 100%">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Tools</a>
+                            <ul class="dropdown-menu ms-auto align-text-bottom">
+                                <li class="nav-item d-flex align-items-end bd-highlight mb-3">
+                                    <a class="nav-link" asp-page="/SessionKeys">Session Key Finder</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
+                </div>
+                    @*<li class="nav-item d-flex align-items-end bd-highlight mb-3" style="height: 100%">
+
+
+            <a class="nav-link"  asp-area="" asp-page="/LeaderBoard">Leaderboard</a>
+
+        </li>
+        <li class="nav-item d-flex align-items-end bd-highlight mb-3" style="height: 100%">
+
+
+            <a class="nav-link" asp-area="" asp-page="/NodeStatus">Node Status</a>
+
+        </li>
+        <li class="nav-item d-flex align-items-end bd-highlight mb-3" style="height: 100%">
+
+
+            <a class="nav-link" asp-area="" asp-page="/Learning">Learning</a>
+
+        </li>*@
 
                 </div>
-            </div>
+            
         </nav>
     </header>
     <div class="container">
@@ -85,7 +115,6 @@
             @RenderBody()
         </main>
     </div>
-
     <!-- Footer: slogan & socials -->
     <footer class="footer mt-auto py-3 bg-light">
         <div class="container">

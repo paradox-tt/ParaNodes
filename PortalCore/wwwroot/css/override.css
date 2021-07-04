@@ -32,6 +32,11 @@
 .ceilingsp{
 	height: 10rem;
 }
+
+.rowspace {
+	height: 5rem;
+}
+
 .pink {
 	background-image: url("../img/pink.png");
 	background-repeat: no-repeat;

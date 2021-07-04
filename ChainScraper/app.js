@@ -24,14 +24,7 @@ app.all('/', (req, res) => {
     //console.log(req.headers);
     var address = req.query.address;
     var era = req.query.era;
-    if (address.charAt(0) == '1') {
-        wsProvider = new api_1.WsProvider('ws://104.238.205.8:9301');
-        console.log("Using Polkadot port:");
-    }
-    else {
-        wsProvider = new api_1.WsProvider('ws://104.238.205.8:9302');
-        console.log("Using Kusama port:");
-    }
+    wsProvider = getServer(address);
     console.log("Request received for address:" + address + " era:" + era);
     getBlockForEra(era).then(block_hash => {
         loadDormantNominators(address, block_hash).then(x => {
@@ -56,18 +49,27 @@ app.all('/', (req, res) => {
 app.all('/payouts', (req, res) => {
     var address = req.query.address;
     var era = req.query.era;
-    if (address.charAt(0) == '1') {
-        wsProvider = new api_1.WsProvider('ws://104.238.205.8:9301');
-        console.log("Using Polkadot port:");
-    }
-    else {
-        wsProvider = new api_1.WsProvider('ws://104.238.205.8:9302');
-        console.log("Using Kusama port:");
-    }
+    wsProvider = getServer(address);
     const payout = getValidatorPayout(1, '2');
     Promise.all([payout]).then(values => {
         res.status(200).send(values[0].block.extrinsics.toHuman());
         console.log("Results posted");
+    });
+});
+app.all('/QueuedKeys', (req, res) => {
+    var address = req.query.address;
+    //address = '14hM4oLJCK6wtS7gNfwTDhthRjy5QJ1t3NAcoPjEepo9AH67';
+    wsProvider = getServer(address);
+    getQueuedKeys(address).then(value => {
+        res.status(200).send(value);
+    });
+});
+app.all('/NextKeys', (req, res) => {
+    var address = req.query.address;
+    //address = 'H3DL157HL7DkvV2kXocanmKaGXNyQphUDVW33Fnfk8KNhsv';
+    wsProvider = getServer(address);
+    getNextKeys(address).then(value => {
+        res.status(200).send(value);
     });
 });
 //Listen for the connection on the specified port
@@ -192,3 +194,44 @@ async function getBalances() {
 //    Results.AddNominator(n);
 //    console.log("Total Nominators: " + Results.GetTotalNominators() + " Stash:" + Results.GetTotalStake());
 //});
+/*  Queued keys
+ *
+ *
+ */
+async function getQueuedKeys(validator) {
+    const api = await api_1.ApiPromise.create({ provider: wsProvider });
+    const allKeys = await api.query.session.queuedKeys();
+    var output = "";
+    for (var i = 0; i < allKeys.length; i++) {
+        if (validator == allKeys[i][0].toHuman()) {
+            output = allKeys[i][1].toHex();
+        }
+    }
+    return output;
+}
+;
+async function getNextKeys(validator) {
+    const api = await api_1.ApiPromise.create({ provider: wsProvider });
+    const allKeys = await api.query.session.nextKeys(validator);
+    var output = "";
+    output = allKeys.toHex();
+    return output;
+}
+;
+//console.log(allKeys.toJSON());
+//const keyring = new Keyring({ type: 'sr25519', ss58Format: 2 });
+//console.log("DECODE " + Buffer.from(keyring.decodeAddress('GaMenw9cpZxNu2wUJHXmBvWqyGFiczzf8dX4kWj8jD47Tcb')).toString('hex'));
+//console.log(allKeys[0].toHuman());
+//console.log(output);
+function getServer(address) {
+    var wsProvider;
+    if (address.charAt(0) == '1') {
+        wsProvider = new api_1.WsProvider('ws://104.238.205.8:9301');
+        console.log("Using Polkadot port:");
+    }
+    else {
+        wsProvider = new api_1.WsProvider('ws://104.238.205.8:9302');
+        console.log("Using Kusama port:");
+    }
+    return wsProvider;
+}
