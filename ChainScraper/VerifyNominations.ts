@@ -1,5 +1,6 @@
 import { ApiPromise, WsProvider } from '@polkadot/api';
 import { BlockHash} from '@polkadot/types/interfaces';
+import { Settings } from './Settings';
 
 var wsProvider = new WsProvider('ws://104.238.205.8:9301');
 

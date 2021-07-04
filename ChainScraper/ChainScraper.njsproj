@@ -41,6 +41,12 @@
     <TypeScriptCompile Include="ResultSet.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="SessionKeys.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Settings.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="VerifyNominations.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>

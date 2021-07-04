@@ -15,10 +15,10 @@ namespace PortalCore.Pages
         {
             HttpClient Http = new HttpClient();
 
-            var nk = await Http.GetStringAsync("http://104.238.205.8:5000/NextKeys?address=" + validator_id);
+            var nk = await Http.GetStringAsync("http://api.paranodes.io/NextKeys?address=" + validator_id);
             NextKeys = nk;
 
-            var qk = await Http.GetStringAsync("http://104.238.205.8:5000/QueuedKeys?address="+validator_id);
+            var qk = await Http.GetStringAsync("http://api.paranodes.io/QueuedKeys?address="+validator_id);
             QueuedKeys = qk;
 
             string rpc_command = "curl -H \"Content - Type: application / json\" -d '{\"id\":1, \"jsonrpc\":\"2.0\", \"method\": \"author_hasSessionKeys\", \"params\":[\""+nk+"\"]}' http://localhost:9933";
@@ -31,7 +31,7 @@ namespace PortalCore.Pages
         {
             get {
 
-                if(_nkey == "0x")
+                if(_nkey == "")
                 {
                     return NextKeys;
                 }else if (_qkey == "")
@@ -55,7 +55,7 @@ namespace PortalCore.Pages
             {
                 if (!string.IsNullOrEmpty(_nkey))
                 {
-                    if (_nkey == "0x")
+                    if (_nkey == "")
                     {
                         return "A key wasn't retrieved, please ensure that the stash account is in validator mode and a key is applied.";
                     }
@@ -83,7 +83,7 @@ namespace PortalCore.Pages
         {
             get
             {
-                if (_nkey == "0x")
+                if (_nkey == "")
                 {
                     return "Sorry there isn't a key to generate the RPC command";
                 }

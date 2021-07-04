@@ -4,16 +4,15 @@ import { ApiPromise, WsProvider } from '@polkadot/api';//Required for chain inte
 import { ResultSet } from './ResultSet';
 import { Nominator } from './Nominator';
 import { EraIndex, BlockHash, SignedBlock } from '@polkadot/types/interfaces';
-import { Keyring } from '@polkadot/keyring';
+import { SessionKeys } from './SessionKeys';
+import { Settings } from './Settings';
 
 var wsProvider;
 var Results: ResultSet;
-//const era = await api.query.staking.activeEra();
-//const era_number = era.unwrap().index.toBigInt();
 
 // Set up the express app
 const app = express(); 
-const listen_port = 5000;
+
 //Establishes endpoint
 
 app.use(bodyparser.json());
@@ -86,11 +85,8 @@ app.all('/payouts', (req, res) => {
 app.all('/QueuedKeys', (req, res) => {
 
     var address: string = req.query.address;
-    //address = '14hM4oLJCK6wtS7gNfwTDhthRjy5QJ1t3NAcoPjEepo9AH67';
-
-    wsProvider = getServer(address);
-
-    getQueuedKeys(address).then(value => {
+    
+    SessionKeys.getQueuedKeys(address).then(value => {
 
         res.status(200).send(
             value
@@ -104,11 +100,8 @@ app.all('/QueuedKeys', (req, res) => {
 app.all('/NextKeys', (req, res) => {
 
     var address: string = req.query.address;
-    //address = 'H3DL157HL7DkvV2kXocanmKaGXNyQphUDVW33Fnfk8KNhsv';
 
-    wsProvider = getServer(address);
-
-    getNextKeys(address).then(value => {
+    SessionKeys.getNextKeys(address).then(value => {
 
         res.status(200).send(
             value
@@ -119,8 +112,8 @@ app.all('/NextKeys', (req, res) => {
 });
 
 //Listen for the connection on the specified port
-app.listen(listen_port, () => {
-    console.log(`Server running on port ${listen_port}`)
+app.listen(Settings.server_port, () => {
+    console.log(`Server running on port ${Settings.server_port}`)
 });
 
 
@@ -293,34 +286,7 @@ async function getBalances(): Promise<string> {
  * 
  *
  */
-async function getQueuedKeys(validator:string):Promise<string> {
-    const api = await ApiPromise.create({ provider: wsProvider });
-    
-    const allKeys = await api.query.session.queuedKeys();
 
-    var output: string = "";
-        
-    for (var i = 0; i < allKeys.length; i++) {
-        
-        if (validator == allKeys[i][0].toHuman()) {
-            output= allKeys[i][1].toHex();
-        }
-    }
-    
-    return output;
-};
-
-async function getNextKeys(validator: string):Promise<string> {
-    const api = await ApiPromise.create({ provider: wsProvider });
-
-    const allKeys = await api.query.session.nextKeys(validator);
-
-    var output: string = "";
-    
-    output= allKeys.toHex();
-        
-    return output;
-};
 
     //console.log(allKeys.toJSON());
     //const keyring = new Keyring({ type: 'sr25519', ss58Format: 2 });
