@@ -19,7 +19,7 @@ app.use(bodyparser.json());
 //getBlockForEra(360);
 app.all('/',  (req, res) => {
 
-    //14hM4oLJCK6wtS7gNfwTDhthRjy5QJ1t3NAcoPjEepo9AH67
+    
     //return output in JSON format
     //console.log(req.headers);
     var address: string = req.query.address;
@@ -112,8 +112,8 @@ app.all('/NextKeys', (req, res) => {
 });
 
 //Listen for the connection on the specified port
-app.listen(Settings.server_port, () => {
-    console.log(`Server running on port ${Settings.server_port}`)
+app.listen(Settings.listen_port, () => {
+    console.log(`Server running on port ${Settings.listen_port}`)
 });
 
 

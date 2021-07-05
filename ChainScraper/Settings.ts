@@ -1,8 +1,8 @@
 import { WsProvider } from '@polkadot/api';
 
 export class Settings {
-    static server_port:string = '80';
-    static server_url:string = '104.238.205.8';
+    static listen_port:string = '5000';
+    static server_url:string = 'localhost';
 
     static polkadot_port:string = '9301';
     static kusama_port: string = '9302';
