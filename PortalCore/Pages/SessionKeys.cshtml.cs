@@ -53,13 +53,14 @@ namespace PortalCore.Pages
         {
             get
             {
-                if (!string.IsNullOrEmpty(_nkey))
+                if (_nkey=="")
                 {
-                    return _nkey;
+                    return "A key wasn't retrieved, please ensure that the stash account is in validator mode and a key is applied.";
+                    
                 }
                 else
                 {
-                    return "A key wasn't retrieved, please ensure that the stash account is in validator mode and a key is applied.";
+                    return _nkey;
                 }
             }
 
