@@ -36,7 +36,7 @@ namespace PortalCore.Pages
                     return NextKeys;
                 }else if (_qkey == "")
                     {
-                    return "A queued key was not retrieived, it is possible that your validator is not in active set or it isn't elected for participation in the next era of validation";
+                    return "A queued key was not retrieved, it is possible that your validator is not in active set or it isn't elected for participation in the next era of validation";
                     }
                 else
                 {
