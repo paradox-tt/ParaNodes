@@ -21,7 +21,7 @@ namespace PortalCore.Pages
             var qk = await Http.GetStringAsync("http://api.paranodes.io:5000/QueuedKeys?address="+validator_id);
             QueuedKeys = qk;
 
-            string rpc_command = "curl -H \"Content - Type: application / json\" -d '{\"id\":1, \"jsonrpc\":\"2.0\", \"method\": \"author_hasSessionKeys\", \"params\":[\""+nk+"\"]}' http://localhost:9933";
+            string rpc_command = "curl -H \"Content-Type: application / json\" -d '{\"id\":1, \"jsonrpc\":\"2.0\", \"method\": \"author_hasSessionKeys\", \"params\":[\""+nk+"\"]}' http://localhost:9933";
 
             RPCCheck = rpc_command;
 
