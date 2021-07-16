@@ -74,11 +74,16 @@
                 <div class="navbar-collapse collapse" id="collapseNavbar">
 
                     <ul class="navbar-nav ms-auto align-text-bottom" style="height: 70px;">
-                        <li class="nav-item d-flex align-items-end bd-highlight mb-3" style="height: 100%">
+                        <li class="nav-item" style="height: 100%">
                             <a class="nav-link" asp-page="/Index">Home</a>
                         </li>
-                        <li class="nav-item d-flex align-items-end bd-highlight mb-3" style="height: 100%">
-                            <a class="nav-link" asp-page="/SessionKeys">Session Key Finder</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Validator Tools </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <a class="nav-link" asp-page="/SessionKeys">Session Key Finder</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
