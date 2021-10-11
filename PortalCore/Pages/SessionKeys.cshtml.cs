@@ -11,6 +11,7 @@ namespace PortalCore.Pages
     public class SessionKeysModel : PageModel
     {
         private string _qkey, _nkey, _rpc;
+
         public async Task OnPostAsync(string validator_id)
         {
             HttpClient Http = new HttpClient();

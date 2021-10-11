@@ -35,6 +35,8 @@
     <Content Include="tsconfig.json" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="BlockHashGen.ts" />
+    <TypeScriptCompile Include="Nominations.ts" />
     <TypeScriptCompile Include="Nominator.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
@@ -47,6 +49,7 @@
     <TypeScriptCompile Include="Settings.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="NominationByEra.ts" />
     <TypeScriptCompile Include="VerifyNominations.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>

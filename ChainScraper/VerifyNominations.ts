@@ -8,9 +8,42 @@ const ce = getCurrentEra().then(current_era => {
     showNominations(['14Ns6kKbCoka3MS4Hn6b7oRw9fFejG8RH5rq5j63cWUfpPDJ', '12RYJb5gG4hfoWPK3owEYtmWoko8G6zwYpvDYTyXFVSfJr8Y','16GMHo9HZv8CcJy4WLoMaU9qusgzx2wxKDLbXStEBvt5274B'], current_era);
     showNominations(['14Ns6kKbCoka3MS4Hn6b7oRw9fFejG8RH5rq5j63cWUfpPDJ', '12RYJb5gG4hfoWPK3owEYtmWoko8G6zwYpvDYTyXFVSfJr8Y', '16GMHo9HZv8CcJy4WLoMaU9qusgzx2wxKDLbXStEBvt5274B'], current_era - 1);
     showNominations(['14Ns6kKbCoka3MS4Hn6b7oRw9fFejG8RH5rq5j63cWUfpPDJ', '12RYJb5gG4hfoWPK3owEYtmWoko8G6zwYpvDYTyXFVSfJr8Y', '16GMHo9HZv8CcJy4WLoMaU9qusgzx2wxKDLbXStEBvt5274B'], current_era - 2);
+
+    //showValidator(['1e1MdQPmrZtPKarHWDuGjq51D8526dwPHXa6Bi7DXzLpCr6'], current_era - 1);
+
 }); 
 
+async function showValidator(nominator_address: string[], era: number) {
+    const api = await ApiPromise.create({ provider: wsProvider });
 
+    let nominators: Array<Nominator> = new Array<Nominator>();
+
+    const eh = await getBlockForEra(era).then(era_hash => {
+        return era_hash;
+    });
+
+    const nom_results = await api.query.staking.nominators.entriesAt(eh).then(nominations => {
+
+        for (let [nom_address, validators] of nominations) {
+            if (nominator_address.includes(nom_address.toHuman()[0])) {
+                var nom = new Nominator();
+
+                nom.era = era;
+                nom.nominator_address = nom_address.toHuman()[0];
+                nom.validators = validators.unwrapOrDefault().targets.toJSON();
+                nom.blockhash = eh;
+                nominators.push(nom);
+            }
+        }
+
+    });
+
+    Promise.all([eh, nom_results]).then(values => {
+        console.log('Result posted');
+        console.log(JSON.stringify(nominators));
+    });
+
+}
 
 async function showNominations(nominator_address:string[], era:number) {
     const api = await ApiPromise.create({ provider: wsProvider });
@@ -50,7 +83,7 @@ async function getCurrentEra():Promise<number> {
     var active_era = await api.query.staking.activeEra().then(x => {
         return x.unwrapOrDefault().index.toNumber();
     });
-
+    console.log("active era");
     return active_era;
 }
 
