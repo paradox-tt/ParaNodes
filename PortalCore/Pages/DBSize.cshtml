@@ -1,0 +1,118 @@
+﻿@page
+@model PortalCore.Pages.DBSizeModel
+@{
+}
+<main class="flex-shrink-0">
+    <div class="container">
+        <div class="ceilingsp"><!-- space from menu --></div>
+        <div class="row">
+            <h1 class="text-center highli">Database Sizes</h1>
+        </div>
+    </div>
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td></td>
+                    <td scope="col"><h3>Kusama</h3></td>
+                    <td scope="col"><h3>Polkadot</h3></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Full Node</th>
+                    <td>
+                        Size - @Model.Kusama_Full_Size<br />
+                        <sub>Last Updated - <i>@Model.Kusama_Full_DT</i></sub>
+                    </td>
+                    <td>
+                        Size - @Model.Polkadot_Full_Size<br />
+                        <sub>Last Updated - <i>@Model.Polkadot_Full_DT</i></sub>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Pruned Node</th>
+                    <td>
+                        Size - @Model.Kusama_Pruned_Size<br />
+                        <sub>Last Updated - <i>@Model.Kusama_Pruned_DT</i></sub>
+                    </td>
+                    <td>
+                        Size - @Model.Polkadot_Full_Size<br />
+                        <sub>Last Updated - <i>@Model.Polkadot_Full_DT</i></sub>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Archive Node</th>
+                    <td>
+                        Size - @Model.Kusama_Archive_Size<br />
+                        <sub>Last Updated - <i>@Model.Kusama_Archive_DT</i></sub>
+                    </td>
+                    <td>
+                        Size - @Model.Polkadot_Archive_Size<br />
+                        <sub>Last Updated - <i>@Model.Polkadot_Archive_DT</i></sub>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <sub>The data used to populate this table is freely available via http://api.paranodes.io:5000/DBSizes and should be updated hourly.</sub>
+    </div>
+    
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-12">
+                <p>
+                    <b>Full Node</b> - A full node is a pruned node that retains the last 256 blocks.  It can be initiated, in default, by starting a node and not specifying the <code>--validator</code> or any pruning flags.
+                </p>
+                <p>
+                    You may use the following flags to initate a full node manually:
+                    <code>
+                        --pruning=256
+                        --unsafe-pruning
+                    </code>
+                </p>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-12">
+                <p>
+                    <b>Pruned Node</b> - A pruned node is one that retains only the last <code>x</code> blocks i.e. the database is pruned (trimmed).  It can be used as a measure to reduce the storage footprint of a node's database, which is the usually the largest store of information for a node. Pruned databases can be used for validator nodes, the most popular configuration of which is to retain the last 1000 blocks.  
+                </p>
+                <p>
+                    A pruned database still requires a full download and processing of all blocks in the chain.  To circumvent this you may use a database <a href="http://polkashots.io">snapshot</a> to restore or load a pruned database.  The pruned settings of the snapshot must match those used in your config.  While there's no reason to suspect mischievious behavior of current providers; <b>one should approach use of snapshots with caution and on the basis of need</b>.
+                </p>
+                <p>
+                    You may use the following flags to initate a pruned node that retains the last 1000 blocks:
+                    <code>
+                        --pruning=1000
+                        --unsafe-pruning
+                    </code>
+                </p>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-12">
+                <p>
+                    <b>Archive Node</b> - An archive node retains all block history for the chain.  This can be used by validators if storage requirements permit.  It is best suited for those who desire to retain a copy of the chain for the purpose of redundancy and redistribution.  An archive node may also be used for development purposes to fulfil historical queries.
+                </p>
+                <p>
+                    You may use the following flags to initate an archive node manually:
+                    <code>
+                        --pruning=archive
+                    </code>
+                </p>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-12">
+                <p>
+                    <b>Methodoloy</b> - The sizes as presented are the uncompressed size of the <code>/home/{user}/.local/share/chains/{chain}/db </code> folder and all subcontents using the <code>du -sh</code> command.  The output was then converted to JSON using code available <a href=""/>here</a>.  This does not reflect the final size of a complete Polkadot installation, please note and scale your estimates.  
+                </p>
+            </div>
+        </div>
+        <p>Growth charts coming Soon<sup>TM</sup></p>
+    </div>
+
+</main>
+
+
