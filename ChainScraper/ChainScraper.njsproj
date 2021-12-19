@@ -11,7 +11,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>ca008837-b9b1-4611-b4a3-725219759857</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>app.ts</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <StartWebBrowser>False</StartWebBrowser>
     <SearchPath>
     </SearchPath>
@@ -29,30 +30,31 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="app.ts" />
+    <Content Include="app.js" />
+    <Content Include="app.js.map" />
+    <Content Include="ChainScraper.njsproj.user" />
+    <Content Include="NominationByEra.js" />
+    <Content Include="Nominator.js" />
+    <Content Include="package-lock.json" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="ResultSet.js" />
     <Content Include="tsconfig.json" />
+    <Content Include="VerifyNominations.js" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="app.ts" />
+    <TypeScriptCompile Include="Benchmark.ts" />
     <TypeScriptCompile Include="BlockHashGen.ts" />
-    <TypeScriptCompile Include="Nominations.ts" />
-    <TypeScriptCompile Include="Nominator.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="ResultSet.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="SessionKeys.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Settings.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
+    <TypeScriptCompile Include="DBFiles.ts" />
     <TypeScriptCompile Include="NominationByEra.ts" />
-    <TypeScriptCompile Include="VerifyNominations.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
+    <TypeScriptCompile Include="Nominations.ts" />
+    <TypeScriptCompile Include="Nominator.ts" />
+    <TypeScriptCompile Include="ResultSet.ts" />
+    <TypeScriptCompile Include="SessionKeys.ts" />
+    <TypeScriptCompile Include="Settings.ts" />
+    <TypeScriptCompile Include="Types.d.ts" />
+    <TypeScriptCompile Include="VerifyNominations.ts" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>
