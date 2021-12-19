@@ -7,6 +7,8 @@ export class Settings {
     static polkadot_port:string = '9301';
     static kusama_port: string = '9302';
 
+    static db_file_path ="C:\\temp\\polkadot_files\\";
+
     static getServer(address: string): WsProvider {
         var wsProvider: WsProvider;
 

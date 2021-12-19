@@ -2,6 +2,8 @@ import express from 'express'; //Required for endpoint
 import { ApiPromise } from '@polkadot/api';//Required for chain interaction
 import { SessionKeys } from './SessionKeys';
 import { Settings } from './Settings';
+import { DBFiles } from './DBFiles';
+import { mainModule } from 'process';
 
 
 // Set up the express app
@@ -53,10 +55,26 @@ app.all('/NextKeys', (req, res) => {
 
 });
 
+
+app.all('/DBSizes', (req, res) => {
+     
+    DBFiles.GetSizes().then(sizes=>{
+
+        res.status(200).send(
+            sizes
+        );
+
+    });
+
+});
+
 //Listen for the connection on the specified port
 app.listen(Settings.listen_port, () => {
     console.log(`Server running on port ${Settings.listen_port}`)
 });
+
+
+
 
 
 

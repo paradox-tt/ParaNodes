@@ -24,7 +24,7 @@ export class SessionKeys {
     static async getNextKeys(validator: string, api:Promise<ApiPromise>): Promise<string> {  
         return api.then(api => { 
             return api.query.session.nextKeys(validator).then(allKeys => {
-                var result = allKeys.toHex();
+                var result = allKeys.toString();
 
                 if (result == "0x") {
                     result = "";
