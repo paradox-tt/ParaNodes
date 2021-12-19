@@ -14,11 +14,21 @@ namespace PortalCore.Pages
     {
         private DBSizes size_data;
         public void OnGet(){
+            
             using (var client = new WebClient())
             {
-                var sizes_string = client.DownloadString("http://api.paranodes.io:5000/DBSizes");
+                string sizes_string;
 
-                Data = JsonConvert.DeserializeObject<DBSizes>(sizes_string);
+                try
+                {
+                    sizes_string = client.DownloadString("http://api.paranodes.io:5000/DBSizes");
+                    Data = JsonConvert.DeserializeObject<DBSizes>(sizes_string);
+                }
+                catch(Exception e)
+                {
+                    Data = new DBSizes();
+                }
+
             }
 
         }
