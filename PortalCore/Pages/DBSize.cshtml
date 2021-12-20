@@ -20,7 +20,9 @@
             </thead>
             <tbody>
                 <tr>
-                    <th>Full Node</th>
+                    <th>Full Node<br />
+                    <sub><i>Retains last 256 blocks</i></sub>
+                    </th>
                     <td>
                         Size - @Model.Kusama_Full_Size<br />
                         <sub>Last Updated - <i>@Model.Kusama_Full_DT</i></sub>
@@ -31,7 +33,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>Pruned Node</th>
+                    <th>
+                        Pruned Node<br />
+                        <sub><i>Retains last 1,000 blocks</i></sub>
+                    </th>
                     <td>
                         Size - @Model.Kusama_Pruned_Size<br />
                         <sub>Last Updated - <i>@Model.Kusama_Pruned_DT</i></sub>
@@ -42,7 +47,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>Archive Node</th>
+                    <th>
+                        Archive Node<br />
+                        <sub><i>Retains all blocks</i></sub>
+                    </th>
                     <td>
                         Size - @Model.Kusama_Archive_Size<br />
                         <sub>Last Updated - <i>@Model.Kusama_Archive_DT</i></sub>
